@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DHT11 Data</title>
+    <link rel="stylesheet" href="../static/indexStyling.css">
+    <link href="https://fonts.googleapis.com/css?family=Bubblegum+Sans&display=swap" rel="stylesheet">
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <h1 style="text-align: center; color: #0fa328;">Garden Data</h1>
+    <div class="container">
+        <div class="row">
+            {% for row in data %}
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Time: {{ row[1] }}</h5>
+                        <p class="card-text">
+                            Temperature: {{ row[2] }} (C) <br>
+                            Humidity: {{ row[3] }} (%) <br>
+                            Moisture levels: {{ row[4] }}
+                        </p>
+                        <a href="#" class="btn btn-primary">Fan on</a>
+                        <a href="#" class="btn btn-primary">Fan off</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Add Bootstrap JS and its dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
